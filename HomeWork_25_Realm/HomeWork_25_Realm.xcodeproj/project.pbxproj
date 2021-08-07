@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4537B390BDBD60083BE29922 /* Pods_HomeWork_25_Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3B751B27B6D8F2AD5444B9 /* Pods_HomeWork_25_Realm.framework */; };
 		E78B469C26BF2F460022AB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B469B26BF2F460022AB74 /* AppDelegate.swift */; };
 		E78B469E26BF2F470022AB74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B469D26BF2F470022AB74 /* SceneDelegate.swift */; };
 		E78B46A026BF2F470022AB74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B469F26BF2F470022AB74 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23E09AAA81EF2AED0AC83770 /* Pods-HomeWork_25_Realm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork_25_Realm.release.xcconfig"; path = "Target Support Files/Pods-HomeWork_25_Realm/Pods-HomeWork_25_Realm.release.xcconfig"; sourceTree = "<group>"; };
+		87C62BA7D70869E2694F537E /* Pods-HomeWork_25_Realm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork_25_Realm.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork_25_Realm/Pods-HomeWork_25_Realm.debug.xcconfig"; sourceTree = "<group>"; };
+		9B3B751B27B6D8F2AD5444B9 /* Pods_HomeWork_25_Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork_25_Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78B469826BF2F460022AB74 /* HomeWork_25_Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_25_Realm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78B469B26BF2F460022AB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E78B469D26BF2F470022AB74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4537B390BDBD60083BE29922 /* Pods_HomeWork_25_Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D47BEDF9CCD4D501F540090 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87C62BA7D70869E2694F537E /* Pods-HomeWork_25_Realm.debug.xcconfig */,
+				23E09AAA81EF2AED0AC83770 /* Pods-HomeWork_25_Realm.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E78B468F26BF2F460022AB74 = {
 			isa = PBXGroup;
 			children = (
 				E78B469A26BF2F460022AB74 /* HomeWork_25_Realm */,
 				E78B469926BF2F460022AB74 /* Products */,
+				2D47BEDF9CCD4D501F540090 /* Pods */,
+				EB961ED01F176878C062F8F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = HomeWork_25_Realm;
 			sourceTree = "<group>";
 		};
+		EB961ED01F176878C062F8F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B3B751B27B6D8F2AD5444B9 /* Pods_HomeWork_25_Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E78B46AC26BF2F470022AB74 /* Build configuration list for PBXNativeTarget "HomeWork_25_Realm" */;
 			buildPhases = (
+				1218E286788EDFAB5020759B /* [CP] Check Pods Manifest.lock */,
 				E78B469426BF2F460022AB74 /* Sources */,
 				E78B469526BF2F460022AB74 /* Frameworks */,
 				E78B469626BF2F460022AB74 /* Resources */,
+				093D0AA7D52E7CC7DD521124 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		093D0AA7D52E7CC7DD521124 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork_25_Realm/Pods-HomeWork_25_Realm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork_25_Realm/Pods-HomeWork_25_Realm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWork_25_Realm/Pods-HomeWork_25_Realm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1218E286788EDFAB5020759B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeWork_25_Realm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E78B469426BF2F460022AB74 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		E78B46AD26BF2F470022AB74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C62BA7D70869E2694F537E /* Pods-HomeWork_25_Realm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		E78B46AE26BF2F470022AB74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E09AAA81EF2AED0AC83770 /* Pods-HomeWork_25_Realm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
