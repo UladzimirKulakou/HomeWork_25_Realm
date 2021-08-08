@@ -14,10 +14,6 @@ let realm = try! Realm()
 class StorageManager {
     static func deleteAll()
     {
-//        try! realm.write{
-//            realm.deleteAll()
-//        }
-//    }
         do {
             try realm.write {
                 realm.deleteAll()
@@ -32,11 +28,6 @@ class StorageManager {
             realm.delete(tasklist)
         }
     }
-//    static func editeOne(tasklist: TasksList){
-//        try! realm.write {
-//            realm.
-//        }
-//    }
     
     static func saveTasksList(taskList: TasksList) {
         try! realm.write {

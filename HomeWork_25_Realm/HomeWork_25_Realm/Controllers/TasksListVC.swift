@@ -23,7 +23,7 @@ class TasksListVC: UITableViewController {
 
         // clean DB
 
-    
+
 
         // выбор из БД плюс сортировка
 
@@ -51,7 +51,7 @@ class TasksListVC: UITableViewController {
     @IBAction func sortingList(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             tasksLists = tasksLists.sorted(byKeyPath: "name")
-            
+
         } else {
             tasksLists = tasksLists.sorted(byKeyPath: "date")
         }
@@ -72,25 +72,25 @@ class TasksListVC: UITableViewController {
         let tasksList = tasksLists[indexPath.row]
         cell.textLabel?.text = tasksList.name
         cell.detailTextLabel?.text = String(tasksList.tasks.count)
-        
+
 
         return cell
     }
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
+
         let currentList = tasksLists[indexPath.row]
-        let deleteContextItem = UIContextualAction(style: .destructive, title: "Delete") {_, _, _ in
+        let deleteContextItem = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             StorageManager.deleteOne(tasklist: currentList)
         }
-        let editContextItem = UIContextualAction(style: .destructive, title: "Edite") {_, _, _ in
+        let editContextItem = UIContextualAction(style: .destructive, title: "Edite") { _, _, _ in
             self.alertForEditeAndUpdateList(tasksLists: currentList)
             StorageManager.deleteOne(tasklist: currentList)
-           
+
         }
-        let doneContextItem = UIContextualAction(style: .destructive, title: "Done") {_, _, _ in
-            
+        let doneContextItem = UIContextualAction(style: .destructive, title: "Done") { _, _, _ in
+
         }
-        
+
         editContextItem.backgroundColor = .blue
         doneContextItem.backgroundColor = .green
         let swipeActions = UISwipeActionsConfiguration(actions: [deleteContextItem, editContextItem, doneContextItem])
@@ -144,27 +144,27 @@ class TasksListVC: UITableViewController {
     private func alertForAddAndUpdateList() {
         let title = "new List"
         let massege = "Please insert list name"
-        
+
         let doneButtonName = "Save"
-        
+
         let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
         var alertTextField: UITextField!
-        
+
         let saveAction = UIAlertAction(title: doneButtonName, style: .default) { _ in
-            
+
             guard let newList = alertTextField.text, !newList.isEmpty else { return }
-            
+
             let taskList = TasksList()
             taskList.name = newList
             StorageManager.saveTasksList(taskList: taskList)
             self.tableView.insertRows(at: [IndexPath(row: self.tasksLists.count - 1, section: 0)], with: .automatic)
         }
-        
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
-        
+
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
-        
+
         alert.addTextField { textField in
             alertTextField = textField
             alertTextField.placeholder = "List name"
@@ -174,28 +174,28 @@ class TasksListVC: UITableViewController {
     private func alertForEditeAndUpdateList(tasksLists: TasksList) {
         let title = "Edit List"
         let massege = "Please edit list name"
-        
+
         let doneButtonName = "Edite"
-        
+
         let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
         var alertTextField: UITextField!
-        
-        
+
+
         let saveAction = UIAlertAction(title: doneButtonName, style: .default) { _ in
-            
+
             guard let newList = alertTextField.text, !newList.isEmpty else { return }
-            
+
             let taskList = TasksList()
             taskList.name = newList
-            
+
             StorageManager.saveTasksList(taskList: taskList)
         }
-        
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
-        
+
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
-        
+
         alert.addTextField { textField in
             alertTextField = textField
             alertTextField.placeholder = "List name"
